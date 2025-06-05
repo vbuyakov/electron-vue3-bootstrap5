@@ -9,6 +9,10 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
+    "package-arm64": "electron-forge package --platform=linux --arch=arm64",
+    "make-arm64": "electron-forge make --platform=linux --arch=arm64",
+    "publish-arm64": "electron-forge publish --platform=linux --arch=arm64",
+    "docker-build": "docker-compose up --build",
     "lint": "echo \"No linting configured\""
   },
   "keywords": [],
@@ -40,6 +44,7 @@
     "dayjs": "^1.11.13",
     "electron-squirrel-startup": "^1.0.1",
     "pinia": "^3.0.2",
-    "vue": "^3.5.14"
+    "vue": "^3.5.14",
+    "vue-i18n": "^11.1.5"
   }
 }

@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    volumes:
+      - ./out:/app/out  # Mount output directory
+    environment:
+      - NODE_ENV=production
+      - ELECTRON_FORCE_ARM64=1  # Force ARM64 architecture
+
+  extractor:
+    image: alpine
+    volumes:
+      - ./out:/output
+      - ./build:/build
+    command: >
+      sh -c 'cp -r /output/* /build/ && chmod -R 777 /build'
+    depends_on:
+      - builder

@@ -1,0 +1,8 @@
+# Prevent Windows node_modules and build outputs from polluting Docker context
+node_modules
+out
+out_linux
+npm-debug.log
+Dockerfile
+docker-compose.yml
+.dockerignore
